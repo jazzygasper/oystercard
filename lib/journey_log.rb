@@ -28,7 +28,7 @@ class JourneyLog
   end
 
   def journeys
-    @journey_history
+    @journey_history.dup
   end
 
 end

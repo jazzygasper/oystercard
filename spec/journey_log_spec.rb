@@ -13,10 +13,6 @@ describe JourneyLog do
   it {is_expected.to respond_to(:journeys)}
   it {is_expected.to respond_to(:current_journey)}
 
-  # describe '#initialize' do
-  #   it { expect(journey_log.journey_history).to be_empty }
-  # end
-
   describe '#current_journey' do
     it {expect(journey_log.current_journey).to eq journey_instance}
   end
