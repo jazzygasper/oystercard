@@ -1,0 +1,28 @@
+class Dog
+
+  def initialize (type_of_dog)
+    @type_of_dog = type_of_dog
+    @dog = type_of_dog.new
+  end
+
+  def bark
+    @dog.bark
+  end
+
+end
+
+class Labrador
+
+  def bark
+    puts 'cute bark'
+  end
+
+end
+
+class Pug
+
+  def bark
+    puts 'ugly bark'
+  end
+
+end
