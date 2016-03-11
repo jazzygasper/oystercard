@@ -6,8 +6,6 @@ class Oystercard
   MAXIMUM_BALANCE_ERROR = "cannot exceed maximum amount £#{MAXIMUM_BALANCE}"
   MINIMUM_BALANCE = 1
   MINIMUM_BALANCE_ERROR = 'insufficient funds.'
-  # MINIMUM_FARE = 2
-  # PENALTY_FARE = 6
 
   attr_reader :balance, :journeys
 
@@ -26,7 +24,7 @@ class Oystercard
   def touch_in(station)
     raise MINIMUM_BALANCE_ERROR if @balance < MINIMUM_BALANCE
     deduct(@journey.fare) if !@journey.exit_station.nil?
-    log_journey if @journey.entry_station != nil
+    log_journey if !@journey.entry_station.nil?
     @journey.start(station)
   end
 
@@ -34,8 +32,7 @@ class Oystercard
     @journey.end(station)
     deduct(@journey.fare)
     log_journey
-    @journey.start(nil)
-    @journey.end(nil)
+    @journey.reset_stations
   end
 
 

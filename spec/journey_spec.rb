@@ -55,10 +55,15 @@ describe Journey do
       journey.start(entry_station)
       expect(journey.fare).to eq(penalty_fare)
     end
-
-
-
   end
+
+  describe '#reset_stations' do
+    it 'resets entry_station and exit_station to nil' do
+    journey.start(entry_station)
+    journey.reset_stations
+    expect(journey.entry_station).to eq nil
+  end
+end
 
 
 end

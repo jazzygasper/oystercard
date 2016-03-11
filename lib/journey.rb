@@ -23,6 +23,11 @@ class Journey
     (@entry_station != nil && @exit_station != nil) ? MINIMUM_FARE : PENALTY_FARE
   end
 
+  def reset_stations
+    @entry_station = nil
+    @exit_station = nil
+  end
+
 
   private
 
