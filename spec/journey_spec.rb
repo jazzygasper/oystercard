@@ -56,6 +56,8 @@ describe Journey do
       expect(journey.fare).to eq(penalty_fare)
     end
 
+
+
   end
 
 
