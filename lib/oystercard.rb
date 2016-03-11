@@ -11,11 +11,12 @@ class Oystercard
 
   attr_reader :balance, :journeys
 
-  def initialize(journey_class)
+  def initialize(journey_class = Journey)
     @balance = 0
     @journeys = []
-    @journey_class = journey_class
-    @journey = journey_class.new
+    @journey = Journey.new
+    # @journey_class = journey_class
+    # @journey = journey_class.new
   end
 
   def top_up(amount)
